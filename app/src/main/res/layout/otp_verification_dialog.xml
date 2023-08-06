@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F2F2F2"
+    android:elevation="10dp"
+    android:layout_marginBottom="10dp">
+
+    <!-- Mail Image Logo -->
+    <ImageView
+        android:id="@+id/imgMailLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/empower_pro_logo"
+        app:layout_constraintBottom_toTopOf="@id/tvOTPVerificationTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- OTP Verification Title -->
+    <TextView
+        android:id="@+id/tvOTPVerificationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="OTP Login Verification"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvOTPDescription"
+        app:layout_constraintEnd_toEndOf="@+id/imgMailLogo"
+        app:layout_constraintStart_toStartOf="@+id/imgMailLogo"
+        app:layout_constraintTop_toBottomOf="@id/imgMailLogo" />
+
+    <!-- OTP Description -->
+    <TextView
+        android:id="@+id/tvOTPDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Enter the OTP sent to your email/number"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/llOTPFields"
+        app:layout_constraintEnd_toEndOf="@+id/tvOTPVerificationTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvOTPVerificationTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvOTPVerificationTitle" />
+
+    <!-- OTP Fields Container -->
+    <LinearLayout
+        android:id="@+id/llOTPFields"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tvOTPDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5">
+
+        <!-- OTP Digit 1 -->
+        <EditText
+            android:id="@+id/otpDigit1"
+            style="@style/OtpEditText"
+            android:maxLength="1" />
+
+        <!-- OTP Digit 2 -->
+        <EditText
+            android:id="@+id/otpDigit2"
+            style="@style/OtpEditText"
+            android:maxLength="1" />
+
+        <!-- OTP Digit 3 -->
+        <EditText
+            android:id="@+id/otpDigit3"
+            style="@style/OtpEditText"
+            android:maxLength="1" />
+
+        <!-- OTP Digit 4 -->
+        <EditText
+            android:id="@+id/otpDigit4"
+            style="@style/OtpEditText"
+            android:maxLength="1" />
+
+        <!-- OTP Digit 5 -->
+        <EditText
+            android:id="@+id/otpDigit5"
+            style="@style/OtpEditText"
+            android:maxLength="1" />
+
+        <!-- OTP Digit 6 -->
+        <EditText
+            android:id="@+id/otpDigit6"
+            style="@style/OtpEditText"
+            android:maxLength="1" />
+
+    </LinearLayout>
+
+    <!-- Resend OTP Text -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/textLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:flow_horizontalAlign="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/llOTPFields"
+        app:layout_constraintStart_toStartOf="@+id/llOTPFields"
+        app:layout_constraintTop_toBottomOf="@+id/llOTPFields">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Didn't receive OTP?"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvResendOTPText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Resend OTP"
+            android:textColor="#FF0000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/text"
+            app:layout_constraintStart_toEndOf="@+id/text"
+            app:layout_constraintTop_toTopOf="@+id/text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-- Verify Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/textLayout"
+        app:layout_constraintStart_toStartOf="@+id/textLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textLayout">
+
+        <Button
+            android:id="@+id/otp_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:stateListAnimator="@null"
+            android:text="Cancel"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/otp_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:stateListAnimator="@null"
+            android:text="Verify"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_otp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/progress_bar"
+        android:elevation="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

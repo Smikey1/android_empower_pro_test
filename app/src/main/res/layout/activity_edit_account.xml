@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.activity.EditAccountActivity">
+
+    <ProgressBar
+        android:id="@+id/aea_pb"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scrollView3" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/aea_profile_image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/empower_pro_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/aea_add_profile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:elevation="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/aea_profile_image"
+                    app:layout_constraintEnd_toEndOf="@+id/aea_profile_image"
+                    app:srcCompat="@android:drawable/ic_menu_add"
+                    app:tint="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/aea_fullname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="30dp"
+                    android:fontFamily="@font/raleway_light"
+                    android:text="Admin Bros"
+                    android:textColor="#489BE8"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/aea_profile_image"
+                    app:layout_constraintStart_toStartOf="@+id/aea_profile_image"
+                    app:layout_constraintTop_toBottomOf="@+id/aea_profile_image" />
+
+                <TextView
+                    android:id="@+id/aea_bio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food Lover"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/goldenColor"
+                    android:textSize="16sp"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintEnd_toEndOf="@+id/aea_fullname"
+                    app:layout_constraintStart_toStartOf="@+id/aea_fullname"
+                    app:layout_constraintTop_toBottomOf="@+id/aea_fullname" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="0.6"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+<!--                // Fullname-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="4dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_profile"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="Full Name"
+                            android:textColor="@color/goldenColor"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/aea_user_full_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_medium"
+                            android:text="Admin Bros"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+<!--                // Email-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="4dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_email"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="Email"
+                            android:textColor="@color/goldenColor"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/aea_user_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_medium"
+                            android:text="admin@gmail.com"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+<!--                // Bio-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="4dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_profile"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="Bio"
+                            android:textColor="@color/goldenColor"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/aea_user_bio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_medium"
+                            android:text="Food Lover"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+<!--                //Address-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="4dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_address"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="Address"
+                            android:textColor="@color/goldenColor"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/aea_user_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_medium"
+                            android:text="Central,Sydney"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+<!--                //Phone Number-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="4dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_phone"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="Phone"
+                            android:textColor="@color/goldenColor"
+                            android:textSize="18sp" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/linearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:elevation="3dp"
+                            app:layout_constraintEnd_toEndOf="@+id/et_sign_up_email"
+                            app:layout_constraintStart_toStartOf="@+id/et_sign_up_email"
+                            app:layout_constraintTop_toBottomOf="@+id/et_sign_up_email">
+
+                            <Spinner
+                                android:id="@+id/spinnerCountryCodes"
+                                android:layout_width="100dp"
+                                android:layout_height="40dp"
+                                android:entries="@array/country_codes"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/aea_user_phone_number"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/raleway_medium"
+                                android:hint="0123456789"
+                                android:inputType="phone"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/spinnerCountryCodes"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/spinnerCountryCodes"
+                                app:layout_constraintTop_toTopOf="@+id/spinnerCountryCodes" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+<!--                //Website-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="4dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_website"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="Website"
+                            android:textColor="@color/goldenColor"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/aea_user_website"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_medium"
+                            android:text="www.empowerpro.com"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="You can change password from here:"
+                    android:textColor="@color/goldenColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+<!--                //Old Password-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="4dp"
+                        android:src="@drawable/key"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="Old Password"
+                            android:textColor="@color/goldenColor"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/aea_old_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_medium"
+                            android:hint="***********"
+                            android:textColor="@color/black"
+                            android:inputType="textPassword"
+                            android:textSize="16sp"
+                            app:passwordToggleEnabled="true" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+<!--                //New Password-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="4dp"
+                        android:src="@drawable/key"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="New Password"
+                            android:textColor="@color/goldenColor"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/aea_new_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_medium"
+                            android:hint="***********"
+                            android:textColor="@color/black"
+                            android:inputType="textPassword"
+                            android:textSize="16sp"
+                            app:passwordToggleEnabled="true" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+<!--                //Confirm Password-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="4dp"
+                        android:src="@drawable/key"
+                        app:tint="@color/colorPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="Confirm Password"
+                            android:textColor="@color/goldenColor"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/aea_confirm_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_medium"
+                            android:hint="***********"
+                            android:inputType="textPassword"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:passwordToggleEnabled="true" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+<!--                // Cancel and Update Button-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/aea_btnCancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/outline_button"
+                        android:text="Cancel"
+                        android:textAllCaps="false"
+                        android:textColor="@color/goldenColor"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnUpdateProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/outline_button"
+                        android:text="Update"
+                        android:textAllCaps="false"
+                        android:textColor="@color/goldenColor"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

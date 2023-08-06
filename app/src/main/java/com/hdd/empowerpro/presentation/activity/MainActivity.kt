@@ -1,8 +1,8 @@
-package com.hdd.empowerpro
+package com.hdd.empowerpro.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.hdd.testempowerpro.R
+import com.hdd.empowerpro.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

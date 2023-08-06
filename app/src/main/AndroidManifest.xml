@@ -2,22 +2,66 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hdd.empowerpro">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.hardware.sensor.proximity" />
+
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EmpowerPro">
+        android:theme="@style/Theme.EmpowerPro"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".presentation.activity.OTPVerificationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".presentation.activity.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.IntroActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.EditAccountActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.ForgotPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.DashboardActivity"
+            android:exported="false"
+            android:label="@string/title_activity_bottom" />
     </application>
 
 </manifest>

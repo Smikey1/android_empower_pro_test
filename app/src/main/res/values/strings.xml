@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">EmpowerPro</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_discover">Discover</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="permission_rationale">Location permission is needed for core functionality</string>
+    <string name="permission_denied_explanation">Permission was denied, but is needed for core
+        functionality.</string>
+    <string name="settings">Settings</string>
+
+    <string-array name="country_codes">
+            <item>+1 (US)</item>
+            <item>+44 (UK)</item>
+            <item>+91 (India)</item>
+            <item>+86 (China)</item>
+            <item>+81 (Japan)</item>
+            <item>+49 (Germany)</item>
+            <item>+33 (France)</item>
+            <item>+39 (Italy)</item>
+            <item>+34 (Spain)</item>
+            <item>+61 (Australia)</item>
+            <item>+55 (Brazil)</item>
+            <item>+52 (Mexico)</item>
+            <item>+7 (Russia)</item>
+            <item>+82 (South Korea)</item>
+            <item>+20 (Egypt)</item>
+            <item>+971 (UAE)</item>
+            <item>+966 (Saudi Arabia)</item>
+            <item>+234 (Nigeria)</item>
+            <item>+27 (South Africa)</item>
+            <item>+65 (Singapore)</item>
+
+    </string-array>
+
 </resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragments.AddFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/fa_AddRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:src="@drawable/add_post"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="Recipe"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fa_AddRecipe"
+            app:layout_constraintEnd_toEndOf="@+id/fa_AddRecipe"
+            app:layout_constraintStart_toStartOf="@+id/fa_AddRecipe" />
+
+        <ImageView
+            android:id="@+id/fa_AddPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/add_recipe"
+            app:layout_constraintEnd_toEndOf="@+id/fa_AddRecipe"
+            app:layout_constraintStart_toStartOf="@+id/fa_AddRecipe"
+            app:layout_constraintTop_toBottomOf="@+id/fa_AddRecipe" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="22dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="Post"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fa_AddPost"
+            app:layout_constraintEnd_toEndOf="@+id/fa_AddPost"
+            app:layout_constraintStart_toStartOf="@+id/fa_AddPost" />
+
+        <ImageView
+            android:id="@+id/fa_AddRestaurant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/add_restaurant"
+            app:layout_constraintEnd_toEndOf="@+id/fa_AddPost"
+            app:layout_constraintStart_toStartOf="@+id/fa_AddPost"
+            app:layout_constraintTop_toBottomOf="@+id/fa_AddPost" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="22dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="Restaurant"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fa_AddRestaurant"
+            app:layout_constraintEnd_toEndOf="@+id/fa_AddRestaurant"
+            app:layout_constraintStart_toStartOf="@+id/fa_AddRestaurant" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
