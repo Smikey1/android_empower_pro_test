@@ -48,7 +48,7 @@ object ServiceBuilder {
     private val oKHttp=OkHttpClient.Builder()
         .callTimeout(20,TimeUnit.SECONDS)
             // comment header interceptor while using unit test
-//        .addInterceptor(headerInterceptor)
+        .addInterceptor(headerInterceptor)
         .addInterceptor(httpLoggingInterceptor).build()
 
     // create a retrofit builder

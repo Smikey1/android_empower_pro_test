@@ -21,6 +21,11 @@ interface UserServices {
         @Header("Authorization") token: String,
     ):Response<UserResponse>
 
+    @POST("user/resend-login-otp")
+    suspend fun resendLoginOTP(
+        @Header("Authorization") token: String,
+    ):Response<UserResponse>
+
 
     @PATCH("user")
     suspend fun updateUserProfile(

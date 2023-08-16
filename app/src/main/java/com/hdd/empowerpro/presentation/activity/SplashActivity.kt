@@ -39,10 +39,14 @@ class SplashActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
             val response = UserRepository().loginUser(User(email = email!!, password = password!!, androidId = currentAndroidId))
             if (response.success == true) {
+                if(response.accessCode != null){
+                    ServiceBuilder.loginCode = response.accessCode;
+                }
                 startActivity(Intent(this@SplashActivity, DashboardActivity::class.java))
                 ServiceBuilder.token = "$token"
                 ServiceBuilder.user = response.data!!
                 finish()
+
             } else {
                 val androidId = getSharedPreferences("userAuth", MODE_PRIVATE).getString("androidId","")
                 if (androidId==currentAndroidId) {

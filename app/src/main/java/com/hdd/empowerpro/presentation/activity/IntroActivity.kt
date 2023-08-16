@@ -25,22 +25,22 @@ class IntroActivity : AppCompatActivity() {
         listOf(
             IntroSlide(
                 "Get Started",
-                "Join Pakwan to learn,make and discover.",
+                "Join EmpowerPro to learn,make and discover.",
                 R.drawable.get_one
             ),
             IntroSlide(
                 "Connecting happiness",
-                "Good food never fail in bringing people together.",
+                "Good things never fail in bringing people together.",
                 R.drawable.get_two
             ),
             IntroSlide(
                 "All you need is",
-                "Good people, good food, good time.",
+                "Good people, good job, good time.",
                 R.drawable.get_three
             ),
             IntroSlide(
                 "Wonderful Time",
-                "When I cannot eat, I talk about eating.",
+                "When I cannot do, I talk about doing.",
                 R.drawable.get_four
             ),
         )

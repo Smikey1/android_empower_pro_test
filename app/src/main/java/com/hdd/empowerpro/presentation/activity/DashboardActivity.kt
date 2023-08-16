@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
+import androidx.core.view.isVisible
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -24,6 +25,7 @@ import com.hdd.empowerpro.repository.UserRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -150,6 +152,7 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         cancel.setOnClickListener {
+            otpDialog.dismiss()
             startActivity(Intent(this, LoginActivity::class.java))
             val sharedPreferences = getSharedPreferences("userAuth", AppCompatActivity.MODE_PRIVATE)
             val editor = sharedPreferences?.edit()!!
@@ -159,10 +162,43 @@ class DashboardActivity : AppCompatActivity() {
             editor.apply()
             finish()
         }
+
         resendOtp.setOnClickListener {
-            showToast("Otp Sent")
-            val threeMinutesInMillis: Long = 1 * 60 * 1000
-            startCountDownTimer(threeMinutesInMillis,resendOtp)
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    val userRepository = UserRepository()
+                    val response = userRepository.resendLoginOTP()
+                    if (response.success == true) {
+                        ServiceBuilder.loginCode = response.accessCode;
+                        withContext(Dispatchers.Main) {
+                            showToast("Otp Sent")
+                            executeFunctionAfterDelay(3000L) {
+                                displayNotification("${ServiceBuilder.loginCode} is your login verification code");
+                            }
+                            val threeMinutesInMillis: Long = 3 * 60 * 1000
+                            startCountDownTimer(threeMinutesInMillis,resendOtp)
+                            resendOtp.isEnabled=false
+                        }
+                    } else {
+                        withContext(Dispatchers.Main) {
+                            withContext(Dispatchers.Main) {
+                                Toast.makeText(this@DashboardActivity,
+                                    "Failed to resend code",
+                                    Toast.LENGTH_SHORT)
+                                    .show()
+                            }
+                        }
+                    }
+                } catch (ex: Exception) {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@DashboardActivity,
+                            "Failed to resend code",
+                            Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                }
+            }
+
         }
 
         btnVerify.setOnClickListener {
@@ -207,6 +243,7 @@ class DashboardActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 resendOtp.text = "Resend" // Timer finished
+                resendOtp.isEnabled=true
             }
         }.start()
     }

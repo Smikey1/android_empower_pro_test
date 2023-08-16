@@ -28,6 +28,12 @@ class UserRepository : HttpRequestNetworkCall() {
         }
     }
 
+    suspend fun resendLoginOTP(): UserResponse {
+        return myHttpRequestNetworkCall {
+            userService.resendLoginOTP(ServiceBuilder.token!!)
+        }
+    }
+
     suspend fun updateUserProfile(user: User)
             : UserResponse {
         return myHttpRequestNetworkCall {

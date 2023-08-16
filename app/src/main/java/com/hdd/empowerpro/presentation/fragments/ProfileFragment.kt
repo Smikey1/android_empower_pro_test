@@ -44,7 +44,6 @@ class ProfileFragment() : Fragment() {
     private lateinit var profileImage: ImageView
     private lateinit var profileName: TextView
     private lateinit var postCounter: TextView
-    private lateinit var recipeCounter: TextView
     private lateinit var savedCounter: TextView
     private lateinit var profileDescription: TextView
     private lateinit var profileWebsite: TextView
@@ -69,18 +68,16 @@ class ProfileFragment() : Fragment() {
         profileImage = view.findViewById(R.id.profile_image)
         profileName = view.findViewById(R.id.profile_name)
         postCounter = view.findViewById(R.id.postCounter)
-        recipeCounter = view.findViewById(R.id.recipeCounter)
         savedCounter = view.findViewById(R.id.savedCounter)
         profileDescription = view.findViewById(R.id.profile_description)
         profileWebsite = view.findViewById(R.id.profile_website)
 
 
         fetchData()
-        tabTitleList = arrayListOf<String>("Empty 1", "Empty 2", "Empty 3")
+        tabTitleList = arrayListOf<String>("Empty 1", "Empty 2")
         fragmentList = arrayListOf<Fragment>(
             EmptyFragment1(),
             EmptyFragment1(),
-            EmptyFragment1()
         )
 
         // setting up adapter class for view pager2
@@ -138,7 +135,6 @@ class ProfileFragment() : Fragment() {
 
                         profileWebsite.text = spannableString
 //                        postCounter.text=user.post!!.size.toString()
-                        recipeCounter.text=user.recipe!!.size.toString()
                         savedCounter.text=user.savedRecipe!!.size.toString()
                     }
                 }
