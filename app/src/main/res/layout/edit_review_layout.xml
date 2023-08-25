@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp"
+    android:elevation="10dp">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Edit Your Review"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/erl_writeReview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="@color/black"
+        android:ems="10"
+        android:inputType="text"
+        android:isScrollContainer="true"
+        android:textColor="@color/black"
+        android:verticalScrollbarPosition="defaultPosition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <LinearLayout
+        android:id="@+id/erl_ratingStarContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="false"
+        android:duplicateParentState="true"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/erl_writeReview"
+        app:layout_constraintStart_toStartOf="@+id/erl_writeReview"
+        app:layout_constraintTop_toBottomOf="@+id/erl_writeReview">
+
+        <ImageView
+            android:id="@+id/ratingStar1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/star"
+            app:tint="#AAA69F" />
+
+        <ImageView
+            android:id="@+id/ratingStar2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/star"
+            app:tint="#AAA69F" />
+
+        <ImageView
+            android:id="@+id/ratingStar3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/star"
+            app:tint="#AAA69F" />
+
+        <ImageView
+            android:id="@+id/ratingStar4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/star"
+            app:tint="#AAA69F" />
+
+        <ImageView
+            android:id="@+id/ratingStar5"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/star"
+            app:tint="#AAA69F" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/erl_ratingStarContainer">
+
+        <Button
+            android:id="@+id/erl_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:stateListAnimator="@null"
+            android:text="Update"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/erl_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:stateListAnimator="@null"
+            android:text="Delete"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

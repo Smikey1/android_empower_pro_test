@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.activity.AddJobActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/job_profile_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/empower_pro_logo" />
+
+            <TextView
+                android:id="@+id/job_profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="User Name"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/aar_ll_post_job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/job_discard"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/cross"
+                app:tint="@color/likeColor" />
+
+            <ImageView
+                android:id="@+id/job_post"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/tick"
+                app:tint="@color/colorLightBlue"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/jobUploadLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="8dp"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+        <TextView
+            android:id="@+id/jobText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Please add company registration image or job verification identity"
+            android:textAlignment="textStart"
+            />
+
+        <ImageView
+            android:id="@+id/job_upload_image"
+            android:layout_width="350dp"
+            android:layout_height="200dp"
+            android:src="@drawable/upload_image"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/job_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Job Title"
+            android:screenReaderFocusable="true"
+            android:textAlignment="textStart"
+            android:verticalScrollbarPosition="defaultPosition" />
+
+        <EditText
+            android:id="@+id/job_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Job Description"
+            android:screenReaderFocusable="true"
+            android:textAlignment="textStart"
+            android:verticalScrollbarPosition="defaultPosition" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/jobPreviewLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/preview_job_upload_image"
+            android:layout_width="350dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:src="@drawable/upload_image"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/preview_job_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Job Title"
+            android:textAlignment="textStart"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/preview_job_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Job Description"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/next_add_job_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/goldenColor"
+        android:text="Next"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/preview_add_job_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/goldenColor"
+        android:text="Edit Details"
+        android:textAllCaps="false"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/segment2LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include layout="@layout/job_description_layout" />
+    </LinearLayout>
+</LinearLayout>

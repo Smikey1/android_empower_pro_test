@@ -59,6 +59,33 @@
             android:name=".presentation.activity.ForgotPasswordActivity"
             android:exported="true" />
         <activity
+            android:name=".presentation.activity.AddCommentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.AddPostActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.FollowingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.AddJobActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.JobDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.AddressPickerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.ViewOtherProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.ViewCompanyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.activity.RecentlyViewedActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.activity.DashboardActivity"
             android:exported="false"
             android:label="@string/title_activity_bottom" />

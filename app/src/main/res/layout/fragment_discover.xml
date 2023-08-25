@@ -18,13 +18,12 @@
             android:textColor="@color/colorPrimary"
             android:textSize="45dp" />
 
-        <androidx.appcompat.widget.SearchView
+        <SearchView
             android:id="@+id/svSearch"
             android:iconifiedByDefault="false"
-            android:queryHint="Search User/Recipe/Hashtag"
+            android:queryHint="Search User/Job/Hashtag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
         <ImageView
             android:id="@+id/showOnEmptySearch"
             android:layout_width="match_parent"
@@ -53,19 +52,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <TextView
-                android:id="@+id/tvSearchedRecipe"
+                android:id="@+id/tvSearchedJob"
                 android:layout_marginStart="6dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Searched Recipe"
+                android:text="Searched Job"
                 android:textStyle="bold"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 android:orientation="vertical"
-                android:id="@+id/searchRecipeRecyclerView"
+                android:id="@+id/searchJobRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>

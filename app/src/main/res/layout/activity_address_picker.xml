@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".presentation.activity.AddressPickerActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            tools:context=".presentation.activity.AddressPickerActivity" />
+
+        <ImageView
+            android:id="@+id/pin_map"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="25dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_my_location" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_current_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:background="@android:color/white"
+            android:src="@drawable/ic_gps"
+            app:backgroundTint="@android:color/white"
+            app:tint="@android:color/holo_blue_dark"
+            app:fabSize="normal" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:id="@+id/location_info">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:background="@drawable/address_custom_background"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent"
+                android:baselineAligned="false"
+                android:paddingBottom="16dp"
+                android:paddingStart="24dp"
+                android:paddingLeft="24dp"
+                android:paddingEnd="24dp"
+                android:paddingRight="24dp"
+                android:layout_marginBottom="48dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    >
+
+                    <ImageButton
+                        android:id="@+id/btnClearSelectedLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_close"
+                        android:layout_gravity="top|end"
+                        android:background="@null"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="-16dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        tools:ignore="UnusedAttribute" />
+
+                    <include layout="@layout/address_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="22dp"
+                        />
+
+                    <Button
+                        android:id="@+id/use_this_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+                        android:text="Use this Location"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textAllCaps="false"
+                        android:stateListAnimator="@null"
+                        app:backgroundTint="@color/colorLightBlue"
+                        app:rippleColor="?colorPrimaryDark"
+                        app:elevation="0dp"
+                        android:background="@drawable/select_location_button_background"
+                        tools:ignore="UnusedAttribute"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom|end"
+                android:src="@drawable/bottom_screen_gradient_background"
+                android:importantForAccessibility="no"
+                />
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

@@ -17,9 +17,9 @@
         android:title="Add" />
 
     <item
-        android:id="@+id/navigation_trending_recipe"
+        android:id="@+id/navigation_trending_job"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Trending Recipe" />
+        android:title="Trending Job" />
 
     <item
         android:id="@+id/navigation_profile"

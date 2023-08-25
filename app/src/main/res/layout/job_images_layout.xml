@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="5dp"
+    android:background="@color/white"
+    android:layout_marginBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/ril_job_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="10dp"
+        android:text="Android Developer"
+        android:textColor="@color/goldenColor"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/ril_job_name"
+        app:layout_constraintTop_toBottomOf="@+id/ril_job_name">
+
+        <include layout="@layout/job_ratings_layout" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ril_hashtag"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/colorPrimary"
+        android:textSize="19sp"
+        android:visibility="visible"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/ril_job_image"
+        app:layout_constraintStart_toStartOf="@+id/ril_job_image"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+    <ImageView
+        android:id="@+id/ril_job_image"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/empower_pro_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/ril_hashtag" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="9dp"
+        android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/ril_job_saved"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        app:backgroundTint="@color/white"
+        app:rippleColor="@color/colorPrimary"
+        app:srcCompat="@drawable/save"
+        app:tint="@color/unlikeColor"/>
+        <ImageView
+            android:id="@+id/ril_job_share"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            app:rippleColor="@color/colorPrimary"
+            app:srcCompat="@drawable/share_icon"
+            app:tint="@color/colorPrimary"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ril_job_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
+        android:text="Job is any substance consumed to provide nutritional support for an organism. Food is usually of plant, animal or fungal origin, and contains essential nutrients, such as carbohydrates, fats, proteins, vitamins, or minerals"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ril_job_image"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ril_job_image"
+        app:layout_constraintTop_toBottomOf="@+id/ril_job_image" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/ril_job_description">
+        <!--        <include layout="@layout/job_view_pager" />-->
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

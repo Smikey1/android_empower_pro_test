@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginHorizontal="10dp"
+    android:orientation="vertical"
+    tools:context=".presentation.activity.ViewOtherProfileActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ap_profile_image"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/empower_pro_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ap_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text=" @Smikey1000"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/ap_profile_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ap_profile_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Food Enthusiastic"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/ap_profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/ap_profile_name" />
+
+        <TextView
+            android:id="@+id/ap_profile_website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:text="Website:pakwan.com.np"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/ap_profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/ap_profile_description" />
+        <TextView
+            android:id="@+id/ap_profile_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:text="0 Followers"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/ap_profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/ap_profile_website" />
+        <TextView
+            android:id="@+id/ap_profile_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:text="0 Following"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/ap_profile_followers"
+            app:layout_constraintTop_toBottomOf="@+id/ap_profile_website" />
+        <Button
+            android:id="@+id/ap_btn_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/golden_rounded_button"
+            android:paddingHorizontal="25dp"
+            android:text="Follow"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ap_profile_website"
+            app:layout_constraintTop_toBottomOf="@+id/ap_profile_followers" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ap_postCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:padding="5dp"
+            android:text="0"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textColor="@color/goldenColor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/ap_jobCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:padding="5dp"
+            android:layout_weight="1"
+            android:text="0"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/goldenColor"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/ap_profile_tabLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabRippleColor="@color/goldenColor"
+        app:tabSelectedTextColor="@color/colorPrimary">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recipe" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/ap_profile_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

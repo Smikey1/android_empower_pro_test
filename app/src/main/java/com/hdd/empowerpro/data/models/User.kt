@@ -51,14 +51,29 @@ data class User(
     @ColumnInfo(name = "user_profile_pic")
     var profile: String? = null,
 
+    @ColumnInfo(name = "user_profile_post")
+    var post: MutableList<Post>? = null,
+
     @ColumnInfo(name = "user_profile_job")
-    var recipe: MutableList<Job>? = null,
+    var job: MutableList<Job>? = null,
+
+    @ColumnInfo(name = "user_follower")
+    var follower: MutableList<String>? = null,
+
+    @ColumnInfo(name = "user_following")
+    var following: MutableList<String>? = null,
 
     @ColumnInfo(name = "user_saved_job")
-    var savedRecipe: MutableList<Job>? = null,
+    var savedJob: MutableList<Job>? = null,
+
+    @ColumnInfo(name = "user_saved_job")
+    var appliedJob: MutableList<Job>? = null,
 
     @ColumnInfo(name = "user_recently_viewed_job")
     var recentlyViewed: MutableList<Job>? = null,
+
+    @ColumnInfo(name = "user_restaurant")
+    var company: Company?= null,
 
     @ColumnInfo(name = "user_reset_code")
     var resetCode: String? = null,

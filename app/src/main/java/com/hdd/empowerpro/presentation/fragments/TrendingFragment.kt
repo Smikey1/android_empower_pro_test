@@ -6,12 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.hdd.empowerpro.R
+import com.hdd.empowerpro.domain.adapter.PostAdapter
+import com.hdd.empowerpro.repository.PostRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
-class TrendingRecipeFragment() : Fragment() {
+class TrendingFragment() : Fragment() {
 
     private lateinit var postRecyclerView: RecyclerView
     private lateinit var swipeDownToRefresh: SwipeRefreshLayout
@@ -21,12 +28,12 @@ class TrendingRecipeFragment() : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_trending_recipe, container, false)
+        val view = inflater.inflate(R.layout.fragment_trending, container, false)
         postRecyclerView = view.findViewById(R.id.postRecyclerView)
         swipeDownToRefresh = view.findViewById(R.id.swipeDownToRefresh)
-//        getPosts()
+        getPosts()
         swipeDownToRefresh.setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener {
-//            getPosts()
+            getPosts()
             val handler = Handler()
             handler.postDelayed(Runnable {
                 if (swipeDownToRefresh.isRefreshing) {
@@ -36,17 +43,17 @@ class TrendingRecipeFragment() : Fragment() {
         })
         return view
     }
-//    private fun getPosts() {
-//        CoroutineScope(Dispatchers.IO).launch {
-//            val postRepository = PostRepository()
-//            val response = postRepository.getTrendingPost()
-//            if (response.success == true) {
-//                withContext(Dispatchers.Main) {
-//                    val adapter = PostAdapter(response.data!!)
-//                    postRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-//                    postRecyclerView.adapter = adapter
-//                }
-//            }
-//        }
-//    }
+    private fun getPosts() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val postRepository = PostRepository()
+            val response = postRepository.getTrendingPost()
+            if (response.success == true) {
+                withContext(Dispatchers.Main) {
+                    val adapter = PostAdapter(response.data!!)
+                    postRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+                    postRecyclerView.adapter = adapter
+                }
+            }
+        }
+    }
 }

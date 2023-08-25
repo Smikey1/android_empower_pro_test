@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/snackBarFDRLinearLayout"
+    tools:context=".presentation.fragments.AddJobDirectionsFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/fdr_etAddStepName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:hint="Hashtag"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <Button
+            android:id="@+id/fdr_btnAddStep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Add Hashtag"
+            android:layout_marginEnd="2dp"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fdr_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_height="230dp" />
+    <Button
+        android:id="@+id/fdr_btnDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorLightBlue"
+        android:text="Done"
+        android:layout_marginEnd="10dp"
+        android:visibility="invisible"
+        android:layout_gravity="end"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+</LinearLayout>

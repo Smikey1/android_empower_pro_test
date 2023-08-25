@@ -17,6 +17,7 @@ import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
@@ -25,8 +26,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.hdd.empowerpro.R
 import com.hdd.empowerpro.data.remoteDataSource.ServiceBuilder
 import com.hdd.empowerpro.domain.adapter.ViewPager2Adapter
-import com.hdd.empowerpro.presentation.activity.EditAccountActivity
-import com.hdd.empowerpro.presentation.activity.LoginActivity
+import com.hdd.empowerpro.presentation.activity.*
 import com.hdd.empowerpro.repository.UserRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -44,9 +44,17 @@ class ProfileFragment() : Fragment() {
     private lateinit var profileImage: ImageView
     private lateinit var profileName: TextView
     private lateinit var postCounter: TextView
+    private lateinit var appliedCounter: TextView
     private lateinit var savedCounter: TextView
     private lateinit var profileDescription: TextView
     private lateinit var profileWebsite: TextView
+    private lateinit var tv_followers: TextView
+    private lateinit var tv_following: TextView
+
+    // for company layout
+    private lateinit var companyImage: ImageView
+    private lateinit var companyName: TextView
+    private lateinit var companyLayout: ConstraintLayout
 
     private var userId: String? = null
 
@@ -68,16 +76,25 @@ class ProfileFragment() : Fragment() {
         profileImage = view.findViewById(R.id.profile_image)
         profileName = view.findViewById(R.id.profile_name)
         postCounter = view.findViewById(R.id.postCounter)
+        appliedCounter = view.findViewById(R.id.appliedCounter)
         savedCounter = view.findViewById(R.id.savedCounter)
         profileDescription = view.findViewById(R.id.profile_description)
         profileWebsite = view.findViewById(R.id.profile_website)
+        tv_followers = view.findViewById(R.id.tv_followers)
+        tv_following = view.findViewById(R.id.tv_following)
+
+        // for company layout
+        companyImage = view.findViewById(R.id.companyImage)
+        companyName = view.findViewById(R.id.companyName)
+        companyLayout = view.findViewById(R.id.companyLayout)
 
 
         fetchData()
-        tabTitleList = arrayListOf<String>("Empty 1", "Empty 2")
+        tabTitleList = arrayListOf<String>("Created", "Applied", "Saved")
         fragmentList = arrayListOf<Fragment>(
-            EmptyFragment1(),
-            EmptyFragment1(),
+            CreatedJobFragment(),
+            AppliedJobFragment(),
+            SavedJobFragment()
         )
 
         // setting up adapter class for view pager2
@@ -90,12 +107,26 @@ class ProfileFragment() : Fragment() {
         profileSetting.setOnClickListener {
             loadPopUpSetting()
         }
+        tv_following.setOnClickListener {
+            navigateToFollowerActivity()
+        }
 
+        tv_followers.setOnClickListener {
+            navigateToFollowerActivity()
+        }
+        
+        companyLayout.setOnClickListener {
+            val intent=Intent(requireContext(), ViewCompanyActivity::class.java)
+            startActivity(intent)
+        }
 
         return view
     }
 
-
+    private fun navigateToFollowerActivity(){
+        val intent = Intent(requireContext(), FollowingActivity::class.java)
+        startActivity(intent)
+    }
 
     @SuppressLint("SetTextI18n")
     private fun fetchData() {
@@ -117,6 +148,14 @@ class ProfileFragment() : Fragment() {
                             profileWebsite.visibility = View.GONE
                         }
 
+                        if(user.company==null){
+                            companyLayout.visibility = View.GONE
+                        } else{
+                            companyLayout.visibility = View.VISIBLE
+                            Glide.with(requireContext()).load(user.company!!.image).circleCrop().into(companyImage)
+                            companyName.text= user.company!!.name
+                        }
+
                         profileDescription.text = user.bio
                         // Set the text to be underlined and blue in color
 
@@ -132,10 +171,10 @@ class ProfileFragment() : Fragment() {
                         val foregroundColorSpan = ForegroundColorSpan(blueColor)
                         spannableString.setSpan(foregroundColorSpan, 0, text.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
-
                         profileWebsite.text = spannableString
-//                        postCounter.text=user.post!!.size.toString()
-                        savedCounter.text=user.savedRecipe!!.size.toString()
+                        postCounter.text=user.post!!.size.toString()
+                        savedCounter.text=user.savedJob!!.size.toString()
+                        appliedCounter.text=user.appliedJob!!.size.toString()
                     }
                 }
             } catch (ex: Exception) {
@@ -149,7 +188,7 @@ class ProfileFragment() : Fragment() {
         popMenu.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.menuEditProfile -> startActivity(Intent(requireContext(), EditAccountActivity::class.java))
-//                R.id.menuRecentlyViewed -> startActivity(Intent(requireContext(), RecentlyViewedActivity::class.java))
+                R.id.menuRecentlyViewed -> startActivity(Intent(requireContext(), RecentlyViewedActivity::class.java))
 //                R.id.menuViewArchive -> startActivity(Intent(requireContext(), ViewArchivedActivity::class.java))
                 R.id.menuLogOut ->  showAlertDialog()
             }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_marginStart="6dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="2dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/sul_profile_image"
+        android:gravity="center"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/empower_pro_logo" />
+    <TextView
+        android:layout_gravity="center"
+        android:text="Fullname"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sul_tv_fullname"
+        />
+</LinearLayout>

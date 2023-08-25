@@ -3,8 +3,7 @@ package com.hdd.empowerpro.repository
 import com.hdd.empowerpro.data.models.User
 import com.hdd.empowerpro.data.remoteDataSource.HttpRequestNetworkCall
 import com.hdd.empowerpro.data.remoteDataSource.ServiceBuilder
-import com.hdd.empowerpro.data.remoteDataSource.response.ImageResponse
-import com.hdd.empowerpro.data.remoteDataSource.response.UserResponse
+import com.hdd.empowerpro.data.remoteDataSource.response.*
 import com.hdd.empowerpro.data.remoteDataSource.services.UserServices
 import okhttp3.MultipartBody
 
@@ -28,6 +27,39 @@ class UserRepository : HttpRequestNetworkCall() {
         }
     }
 
+    suspend fun savedJob(jobId:String): UserResponse {
+        return myHttpRequestNetworkCall {
+            userService.getSingleSavedJob(ServiceBuilder.token!!,jobId)
+        }
+    }
+    suspend fun applyJob(jobId:String): UserResponse {
+        return myHttpRequestNetworkCall {
+            userService.applyJob(ServiceBuilder.token!!,jobId)
+        }
+    }
+    suspend fun getAllUserSavedJob(): JobsResponse {
+        return myHttpRequestNetworkCall {
+            userService.getAllUserSavedJob(ServiceBuilder.token!!)
+        }
+    }
+    suspend fun getAllUserAppliedJob(): JobsResponse {
+        return myHttpRequestNetworkCall {
+            userService.getAllUserAppliedJob(ServiceBuilder.token!!)
+        }
+    }
+
+    suspend fun getUserPost(): PostsResponse {
+        return myHttpRequestNetworkCall {
+            userService.getUserPost(ServiceBuilder.token!!)
+        }
+    }
+
+    suspend fun getOtherUserProfile(id:String): UserResponse {
+        return myHttpRequestNetworkCall {
+            userService.getOtherUserProfile(ServiceBuilder.token!!,id)
+        }
+    }
+
     suspend fun resendLoginOTP(): UserResponse {
         return myHttpRequestNetworkCall {
             userService.resendLoginOTP(ServiceBuilder.token!!)
@@ -38,6 +70,23 @@ class UserRepository : HttpRequestNetworkCall() {
             : UserResponse {
         return myHttpRequestNetworkCall {
             userService.updateUserProfile(ServiceBuilder.token!!,user)
+        }
+    }
+
+    suspend fun followUser(id:String): UserResponse {
+        return myHttpRequestNetworkCall {
+            userService.followUser(ServiceBuilder.token!!,id)
+        }
+    }
+
+    suspend fun getUserFollowers(): FollowersFollowingResponse {
+        return myHttpRequestNetworkCall {
+            userService.getUserFollowers(ServiceBuilder.token!!)
+        }
+    }
+    suspend fun getUserFollowing(): FollowersFollowingResponse {
+        return myHttpRequestNetworkCall {
+            userService.getUserFollowing(ServiceBuilder.token!!)
         }
     }
 

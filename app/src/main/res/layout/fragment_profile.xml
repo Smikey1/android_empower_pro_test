@@ -60,6 +60,29 @@
             app:layout_constraintStart_toEndOf="@+id/profile_image"
             app:layout_constraintTop_toBottomOf="@+id/profile_description" />
 
+        <TextView
+            android:id="@+id/tv_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:text="0 Followers"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/profile_website" />
+        <TextView
+            android:id="@+id/tv_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:text="0 Following"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_followers"
+            app:layout_constraintTop_toBottomOf="@+id/profile_website" />
+
       <ImageButton
             android:id="@+id/profileSetting"
             android:layout_width="wrap_content"
@@ -75,6 +98,44 @@
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/companyLayout"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="2dp"
+        android:gravity="center">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/companyImage"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:src="@drawable/empower_pro_logo"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/companyName"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#fdfa72"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="EmpowerPro Company"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/companyImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/companyImage"
+            app:layout_constraintTop_toTopOf="@+id/companyImage" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -96,6 +157,17 @@
             android:textColor="@color/goldenColor"
             android:textSize="14sp" />
 
+        <TextView
+            android:id="@+id/appliedCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:padding="5dp"
+            android:text="0"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textColor="@color/goldenColor"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/savedCounter"
@@ -122,12 +194,18 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Applied Job" />
+            android:text="Created" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Saved Job" />
+            android:text="Applied" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saved" />
+
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2

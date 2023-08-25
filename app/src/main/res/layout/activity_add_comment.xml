@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.activity.AddCommentActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/curved_background"
+        android:elevation="5dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/fac_Profile"
+            android:scaleType="fitXY"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/empower_pro_logo"/>
+        <EditText
+            android:id="@+id/fac_etAddComment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Write a Comment ..."
+            android:textColorHint="@color/black"
+            android:background="@drawable/curved_background"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/fac_btnAddComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Comment"
+        android:layout_gravity="end"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:stateListAnimator="@null"
+        android:textColor="@color/white"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fac_CommentRV"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

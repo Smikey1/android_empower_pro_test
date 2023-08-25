@@ -15,11 +15,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/fa_AddRecipe"
+            android:id="@+id/fa_CreatePost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
-            android:src="@drawable/add_post"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/add_recipe"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,65 +30,66 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="22dp"
             android:background="@color/white"
             android:gravity="center"
-            android:text="Recipe"
+            android:text="Create Post"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/fa_AddRecipe"
-            app:layout_constraintEnd_toEndOf="@+id/fa_AddRecipe"
-            app:layout_constraintStart_toStartOf="@+id/fa_AddRecipe" />
+            app:layout_constraintBottom_toBottomOf="@+id/fa_CreatePost"
+            app:layout_constraintEnd_toEndOf="@+id/fa_CreatePost"
+            app:layout_constraintStart_toStartOf="@+id/fa_CreatePost" />
 
         <ImageView
-            android:id="@+id/fa_AddPost"
+            android:id="@+id/fa_CreateJob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
-            android:layout_marginTop="100dp"
             android:src="@drawable/add_recipe"
-            app:layout_constraintEnd_toEndOf="@+id/fa_AddRecipe"
-            app:layout_constraintStart_toStartOf="@+id/fa_AddRecipe"
-            app:layout_constraintTop_toBottomOf="@+id/fa_AddRecipe" />
+            app:layout_constraintEnd_toEndOf="@+id/fa_CreatePost"
+            app:layout_constraintStart_toStartOf="@+id/fa_CreatePost"
+            app:layout_constraintTop_toBottomOf="@+id/fa_CreatePost" />
 
         <TextView
+            android:id="@+id/textView21"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="22dp"
             android:background="@color/white"
             android:gravity="center"
-            android:text="Post"
+            android:text="Create Job"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/fa_AddPost"
-            app:layout_constraintEnd_toEndOf="@+id/fa_AddPost"
-            app:layout_constraintStart_toStartOf="@+id/fa_AddPost" />
+            app:layout_constraintBottom_toBottomOf="@+id/fa_CreateJob"
+            app:layout_constraintEnd_toEndOf="@+id/fa_CreateJob"
+            app:layout_constraintStart_toStartOf="@+id/fa_CreateJob" />
 
         <ImageView
-            android:id="@+id/fa_AddRestaurant"
+            android:id="@+id/fa_AddCompany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
-            android:layout_marginTop="100dp"
-            android:src="@drawable/add_restaurant"
-            app:layout_constraintEnd_toEndOf="@+id/fa_AddPost"
-            app:layout_constraintStart_toStartOf="@+id/fa_AddPost"
-            app:layout_constraintTop_toBottomOf="@+id/fa_AddPost" />
+            android:src="@drawable/add_company"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/fa_CreateJob"
+            app:layout_constraintStart_toStartOf="@+id/fa_CreateJob"
+            app:layout_constraintTop_toBottomOf="@+id/fa_CreateJob" />
 
         <TextView
+            android:id="@+id/textView5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginBottom="22dp"
             android:background="@color/white"
             android:gravity="center"
-            android:text="Restaurant"
+            android:text="Add Company"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/fa_AddRestaurant"
-            app:layout_constraintEnd_toEndOf="@+id/fa_AddRestaurant"
-            app:layout_constraintStart_toStartOf="@+id/fa_AddRestaurant" />
+            app:layout_constraintBottom_toBottomOf="@+id/fa_AddCompany"
+            app:layout_constraintEnd_toEndOf="@+id/fa_AddCompany"
+            app:layout_constraintStart_toStartOf="@+id/fa_AddCompany" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

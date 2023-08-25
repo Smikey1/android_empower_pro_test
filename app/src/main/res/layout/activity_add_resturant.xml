@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.activity.AddCompanyActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="225dp"
+                    android:background="@drawable/card_background"
+                    android:backgroundTint="#E0F1F0"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/aar_add_company_cover_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/aar_company_image"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="120dp"
+                    android:src="@drawable/empower_pro_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/aar_add_company_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:elevation="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/aar_company_image"
+                    app:layout_constraintEnd_toEndOf="@+id/aar_company_image"
+                    app:srcCompat="@android:drawable/ic_menu_add"
+                    app:tint="@color/black" />
+
+                <EditText
+                    android:id="@+id/aar_add_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_light"
+                    android:hint="Company Name"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/aar_company_image"
+                    app:layout_constraintStart_toStartOf="@+id/aar_company_image"
+                    app:layout_constraintTop_toBottomOf="@+id/aar_company_image" />
+
+                <EditText
+                    android:id="@+id/aar_add_company_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="4dp"
+                    android:hint="Company Description"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:scrollHorizontally="true"
+                    app:layout_constraintEnd_toEndOf="@+id/aar_add_company_name"
+                    app:layout_constraintStart_toStartOf="@+id/aar_add_company_name"
+                    app:layout_constraintTop_toBottomOf="@+id/aar_add_company_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- //   This is add company layout-->
+            <LinearLayout
+                android:id="@+id/aar_add_company_image_details_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_background"
+                android:backgroundTint="#E0F1F0"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                <!--                //Phone Number-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/edittext_background"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_phone"
+                        app:tint="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="Phone"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/aar_add_company_phone_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_medium"
+                            android:hint="+977-984XXXXXXX"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <!--                //Time Schedule-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/edittext_background"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_time_schedule"
+                        app:tint="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="Opening Hours      Closing Hours"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <EditText
+                                android:id="@+id/aar_add_company_opening_time_schedule"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/raleway_medium"
+                                android:hint="9:30 AM"
+                                android:text="9:30 AM"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:textColor="@color/black"
+                                android:layout_marginHorizontal="3dp"
+                                android:textSize="16sp" />
+                            <EditText
+                                android:id="@+id/aar_add_company_closing_time_schedule"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/raleway_medium"
+                                android:hint="5:45 PM"
+                                android:text="5:45 PM"
+                                android:textColor="@color/black"
+                                android:focusable="false"
+                                android:layout_marginHorizontal="3dp"
+                                android:layout_weight="1"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--                //Address-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/edittext_background"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_address"
+                        app:tint="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_bold"
+                            android:text="Address"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/aar_add_company_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/raleway_medium"
+                            android:hint="Bharatpur,Chitwan"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/aar_map_address"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_map"
+                        app:tint="@color/colorLightBlue" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!--                // Cancel and Update Button-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/aar_add_company_image_details_layout"
+                app:layout_constraintStart_toStartOf="@+id/aar_add_company_image_details_layout"
+                app:layout_constraintTop_toBottomOf="@+id/aar_add_company_image_details_layout">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/aar_btnCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/company_outline_button"
+                    android:text="Cancel"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorLightBlue"
+                    android:textSize="19sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/aar_btnAddCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/company_outline_button"
+                    android:text="Done"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorLightBlue"
+                    android:textSize="19sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

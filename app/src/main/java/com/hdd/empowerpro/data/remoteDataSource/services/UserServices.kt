@@ -1,8 +1,7 @@
 package com.hdd.empowerpro.data.remoteDataSource.services
 
 import com.hdd.empowerpro.data.models.User
-import com.hdd.empowerpro.data.remoteDataSource.response.ImageResponse
-import com.hdd.empowerpro.data.remoteDataSource.response.UserResponse
+import com.hdd.empowerpro.data.remoteDataSource.response.*
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
@@ -16,9 +15,48 @@ interface UserServices {
     @POST("user/login")
     suspend fun login(@Body user: User): Response<UserResponse>
 
+    @GET("user/savedJob")
+    suspend fun getAllUserSavedJob(
+        @Header("Authorization") token: String,
+    ):Response<JobsResponse>
+
+    @GET("user/appliedJob")
+    suspend fun getAllUserAppliedJob(
+        @Header("Authorization") token: String,
+    ):Response<JobsResponse>
+
+    @POST("user/savedJob/{jobId}")
+    suspend fun getSingleSavedJob(
+        @Header("Authorization") token: String,
+        @Path("jobId") jobId: String
+    ):Response<UserResponse>
+
+    @POST("user/appliedJob/{jobId}")
+    suspend fun applyJob(
+        @Header("Authorization") token: String,
+        @Path("jobId") jobId: String
+    ):Response<UserResponse>
+    
     @GET("user")
     suspend fun getUserProfile(
         @Header("Authorization") token: String,
+    ):Response<UserResponse>
+
+    @GET("user/post")
+    suspend fun getUserPost(
+        @Header("Authorization") token: String,
+    ):Response<PostsResponse>
+
+    @GET("user/{id}")
+    suspend fun getOtherUserProfile(
+        @Header("Authorization") token: String,
+        @Path("id") id: String,
+    ):Response<UserResponse>
+
+    @PATCH("user/follow/{id}")
+    suspend fun followUser(
+        @Header("Authorization") token: String,
+        @Path("id") id: String
     ):Response<UserResponse>
 
     @POST("user/resend-login-otp")
@@ -80,5 +118,15 @@ interface UserServices {
     suspend fun validateEmail(
         @Body user: User,
     ): Response<UserResponse>
+
+    @GET("user/followers")
+    suspend fun getUserFollowers(
+        @Header("Authorization") token: String,
+    ):Response<FollowersFollowingResponse>
+
+    @GET("user/following")
+    suspend fun getUserFollowing(
+        @Header("Authorization") token: String,
+    ):Response<FollowersFollowingResponse>
 
 }

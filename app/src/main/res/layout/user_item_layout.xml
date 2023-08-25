@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginVertical="5dp"
+    android:elevation="8dp"
+    android:orientation="vertical"
+    android:layout_marginLeft="4dp"
+    android:layout_marginBottom="4dp"
+    android:padding="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/uil_Profile"
+            android:scaleType="fitXY"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/empower_pro_logo"
+            android:layout_marginRight="10dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/uil_fullname"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pakwan User"/>
+            <TextView
+                android:id="@+id/uil_bio"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                android:text="Food lover."/>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/uil_btn_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/outline_button"
+            android:drawablePadding="10dp"
+            android:textColor="@color/goldenColor"
+            android:elevation="3dp"
+            android:padding="13dp"
+            android:text="Other"
+            android:textAllCaps="false"
+            android:textSize="18dp" />
+    </LinearLayout>
+</LinearLayout>

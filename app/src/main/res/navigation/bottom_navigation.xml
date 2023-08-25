@@ -23,10 +23,10 @@
         android:label="Add"
         tools:layout="@layout/fragment_add" />
     <fragment
-        android:id="@+id/navigation_trending_recipe"
-        android:name="com.hdd.empowerpro.presentation.fragments.TrendingRecipeFragment"
+        android:id="@+id/navigation_trending_job"
+        android:name="com.hdd.empowerpro.presentation.fragments.TrendingFragment"
         android:label="Trending"
-        tools:layout="@layout/fragment_trending_recipe" />
+        tools:layout="@layout/fragment_trending" />
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.hdd.empowerpro.presentation.fragments.ProfileFragment"

@@ -24,7 +24,7 @@ object ServiceBuilder {
     var loginCode:String? = null
     var uid:String? = null
     var user: User? = null
-    var recipeId: String? = ""
+    var jobId: String? = ""
 
     var followingList = mutableListOf<String>()
 
